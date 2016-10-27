@@ -1,13 +1,14 @@
 package com.geekluxun.www.myandroidlib.test;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.geekluxun.www.myandroidlib.R;
+import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.TimberTest;
 
 public class MainActivity extends AppCompatActivity  implements MyFragment.OnFragmentInteractionListener{
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity  implements MyFragment.OnFra
         setContentView(R.layout.activity_main);
         addFragment();
         //startActivity(new Intent(MainActivity.this, MyActivity.class));
+        initTest();
     }
 
     public void addFragment(){
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity  implements MyFragment.OnFra
         FragmentTransaction ft = fm.beginTransaction();
         MyFragment myFragment = MyFragment.newInstance("p1", "p2");
         ft.replace(R.id.fragment, (Fragment) myFragment);
-       //ft.add(R.id.fragment, (Fragment) myFragment);
+        //ft.add(R.id.fragment, (Fragment) myFragment);
         ft.addToBackStack(null);
         try {
             ft.commit();
@@ -37,5 +39,13 @@ public class MainActivity extends AppCompatActivity  implements MyFragment.OnFra
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    /**
+     * 测试初始化
+     */
+    public void initTest(){
+        //LoggerTest loggerTest = new LoggerTest();
+        TimberTest timberTest = new TimberTest();
     }
 }

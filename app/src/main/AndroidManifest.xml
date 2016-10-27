@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".test.AutoLayoutTestActivity"
+            android:name=".test.thirdPartLibrary.AutoLayoutTestActivity"
             android:launchMode="standard"
             android:theme="@style/Theme.AppCompat.NoActionBar">
         </activity>
