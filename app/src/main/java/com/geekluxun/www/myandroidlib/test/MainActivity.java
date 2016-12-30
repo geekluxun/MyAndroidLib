@@ -4,22 +4,26 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+
 import com.geekluxun.www.myandroidlib.R;
 import com.geekluxun.www.myandroidlib.test.java.annotations.Test;
 import com.geekluxun.www.myandroidlib.test.java.annotations.handle.HandleTestAnnotation;
-import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.RxJavaTest;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.ActivityComponent;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.ActivityModule;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.DaggerActivityComponent;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.User;
+import com.geekluxun.www.myandroidlib.test.widget.RecyclerViewTest.RecyclerViewTestActivity;
 import com.orhanobut.logger.Logger;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 import javax.inject.Inject;
 
 public class MainActivity extends Activity implements MyFragment.OnFragmentInteractionListener{
@@ -35,7 +39,7 @@ public class MainActivity extends Activity implements MyFragment.OnFragmentInter
         Logger.init(TAG).methodCount(0).hideThreadInfo();
         Logger.t(TAG).i("onCreate");
         setContentView(R.layout.activity_main);
-        addFragment();
+        //addFragment();
         initTest();
     }
 
@@ -66,10 +70,33 @@ public class MainActivity extends Activity implements MyFragment.OnFragmentInter
         //LoggerTest loggerTest = new LoggerTest();
         //TimberTest timberTest = new TimberTest();
         //startActivity(new Intent(MainActivity.this, FrescoTestActivity.class));
-        new RxJavaTest();
-        handleTestAnnotation();
-        testDagger2();
-    }
+        //startActivity(new Intent(MainActivity.this, AutoLayoutTestActivity.class));
+        startActivity(new Intent(MainActivity.this, RecyclerViewTestActivity.class));
+
+        // new RxJavaTest();
+        // handleTestAnnotation();
+        // testDagger2();
+        // new RetrofitTest(getApplicationContext());
+        // new OkhttpTest(getApplicationContext());
+        // new MyDialogTest(MainActivity.this);
+//        try {
+//            System.loadLibrary("hello-jni");
+//        } catch (Exception e){
+//            Logger.e(e, "error");
+//            return;
+//        }
+//        String d = null;
+//        try {
+//            d = Myndklib.getStringFromJNI();
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        Logger.i(d);
+
+//        String string = MyNdkInterface.stringFromJNI();
+//        Logger.i(string);
+//        startActivity(new Intent(MainActivity.this, NoteActivity.class));
+     }
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {

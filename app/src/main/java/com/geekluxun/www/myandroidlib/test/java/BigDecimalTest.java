@@ -7,12 +7,12 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 /**
- * Created by mark on 2016/9/12.
+ * Created by geekluxun on 2016/9/12.
  */
 public class BigDecimalTest {
     private static  final  String  TAG = "BigDecimalTest";
 
-    public void BigDecimalTest1(){
+    public void BigDecimalTest(){
 
         float f[] = {0.010f, 2.510f, 2.515f, 2.516f, -2.510f, -2.511f, -2.515f, -2.516f};
 
