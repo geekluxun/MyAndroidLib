@@ -17,7 +17,7 @@ import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.Activity
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.ActivityModule;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.DaggerActivityComponent;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.dagger2Test.User;
-import com.geekluxun.www.myandroidlib.test.widget.RecyclerViewTest.RecyclerViewTestActivity;
+import com.geekluxun.www.weex.MyWeexActivity;
 import com.orhanobut.logger.Logger;
 
 import java.util.ArrayList;
@@ -71,7 +71,10 @@ public class MainActivity extends Activity implements MyFragment.OnFragmentInter
         //TimberTest timberTest = new TimberTest();
         //startActivity(new Intent(MainActivity.this, FrescoTestActivity.class));
         //startActivity(new Intent(MainActivity.this, AutoLayoutTestActivity.class));
-        startActivity(new Intent(MainActivity.this, RecyclerViewTestActivity.class));
+        //startActivity(new Intent(MainActivity.this, RecyclerViewTestActivity.class));
+        //startActivity(new Intent(MainActivity.this, GlideTestActivity.class));
+        startActivity(new Intent(MainActivity.this, MyWeexActivity.class));
+
 
         // new RxJavaTest();
         // handleTestAnnotation();

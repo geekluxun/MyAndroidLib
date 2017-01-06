@@ -1,11 +1,12 @@
 package com.geekluxun.www.myandroidlib.test;
 
 import android.app.Application;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.greendaoTest.DaoMaster;
 import com.geekluxun.www.myandroidlib.test.thirdPartLibrary.greendaoTest.DaoSession;
+import com.geekluxun.www.weex.WeexInit;
 
 import org.greenrobot.greendao.database.Database;
 
@@ -23,19 +24,24 @@ public class MyApplication extends Application {
     public DaoMaster.DevOpenHelper helper;
     public DaoMaster daoMaster;
 
+    public static Context mAppContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
+        mAppContext = getApplicationContext();
         //AutoLayoutConifg.getInstance().useDeviceSize();
         //BigDecimalTest bigDecimalTest = new BigDecimalTest();
         //bigDecimalTest.BigDecimalTest1();
-        Fresco.initialize(getApplicationContext());
-        setupDatabase();
+        //Fresco.initialize(getApplicationContext());
+        //setupDatabase();
+
+        WeexInit.Init(this,false, "debug_server");
     }
 
-//    public Context getContext(){
-//        return mAppContext;
-//    }
+    public static Context getContext(){
+        return mAppContext;
+    }
 
 
     private void setupDatabase() {

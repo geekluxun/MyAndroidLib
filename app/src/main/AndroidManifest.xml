@@ -42,6 +42,9 @@
         <activity android:name=".test.thirdPartLibrary.greendaoTest.NoteActivity"/>
         <activity android:name=".test.widget.RecyclerViewTest.RecyclerViewTestActivity">
         </activity>
+        <activity android:name=".test.thirdPartLibrary.GlideTestActivity">
+        </activity>
+
     </application>
 
 </manifest>
